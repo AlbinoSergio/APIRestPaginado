@@ -30,11 +30,7 @@ public class Persona extends Base {
     private Domicilio domicilio;
 
     @OneToMany(cascade = CascadeType.ALL ,orphanRemoval = true)
-    @JoinTable(
-            name = "persona_libro",
-            joinColumns = @JoinColumn(name = "persona_id"),
-            inverseJoinColumns = @JoinColumn(name = "libro_id")
-    )
+    @JoinColumn(name = "id_persona")
     private List<Libro> libros = new ArrayList<Libro>();
 
 }
